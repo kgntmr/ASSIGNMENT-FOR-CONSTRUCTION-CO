@@ -14,11 +14,6 @@ This study evaluated the sentiment conveyed in textual data acquired from the Re
 Thus, the goal of this assignment is to give stakeholders, decision-makers, and industry professionals a thorough, data-driven assessment of Ireland's construction industry that includes insightful recommendations. Making well-informed decisions to influence the future trajectory of the Irish construction sector requires an awareness of previous dynamics and patterns.
 
 
-
-
-
-
-
 1. DATA PREPARATION
 
 The raw data for our research on the construction industry came from two primary sources, the European Statistical Office and the Central Statistics Office of Ireland, as well as a class-provided alpha code dataset. These sources were chosen based on their credibility and applicability, ensuring that the research process was thorough. The specificity of data on the construction industry, which allowed for in-depth analysis, was an advantage. However, obstacles arose in the form of data gaps, which were mitigated by linear interpolation, albeit with the introduction of assumptions that should be acknowledged. Importantly, all data utilization was in accordance with the required licenses and permissions, confirming the research's ethical integrity. The acquired data is licensed under a public license.
@@ -209,22 +204,30 @@ These countries are selected randomly according to their geographical proximity 
 
 3.2.1 Boxplot
 
+
+![image](https://github.com/kgntmr/CONSTRUCTION-SECTOR-ANALYSIS/assets/126175253/f771cad2-c299-4b00-9a7a-2379f484fb38)
  
 
 The boxplot reveals outliers in Ireland, while using a plain blue color to avoid color-based judgments. Norway has the highest difference between minimum and maximum values, Portugal has the lowest, and Ireland falls in the moderate range.
 
 3.2.2. Bee Swarm Plot
 
+
+![image](https://github.com/kgntmr/CONSTRUCTION-SECTOR-ANALYSIS/assets/126175253/90b00003-bcc1-4fa5-8208-fc45b109c732)
  
 
 3.2.3. Line Chart
 
 Every colour represents different countries. According to the line chart except for “Norway” the rest of the countries had challenges due to recession. “By January 2008, housebuilding had started to slow, and unemployment was on the rise, fueled largely by construction lay-offs. However, the most pessimistic forecast predicted the economy to grow by 2.3 per cent that year and bounce back the next, but in (Taylor, 2018)”
 
- 
+
+ ![image](https://github.com/kgntmr/CONSTRUCTION-SECTOR-ANALYSIS/assets/126175253/183ba716-f68b-4b7f-9139-1941ffb12344)
+
 
 3.2.4. Heatmap
 
+
+![image](https://github.com/kgntmr/CONSTRUCTION-SECTOR-ANALYSIS/assets/126175253/ec200dad-40e5-4bb3-a0b5-529fa55be138)
  
 
 I depict these relationships using colours: green for optimum positive relationship, blue for a strong positive relationship, and yellow for a weak positive relationship.
@@ -237,73 +240,62 @@ To deal with outliers, the MinMaxScaler technique was utilized. The application 
 3.3.1. Bee Swarm Plot of IE
 (The interactive graphs possesses cursor focusability, enabling an in-depth examination of feature behaviors across different years.)
 
- 
+
+ ![image](https://github.com/kgntmr/CONSTRUCTION-SECTOR-ANALYSIS/assets/126175253/ff374aff-5d23-435c-9ca2-0c6f703b578a)
+
 
 The bee swarm plot is useful for this research because it illustrates the distribution of the data across categories, handles overlapping data well, facilitates distribution comparisons, depicts relationships between categorical and continuous variables, and provides insights into skewness and outliers.
-
-
-
-
-
-
 
 
 3.3.2. Heatmap
 
 The heatmap reveals significant correlations between variables, with the Labour Force exhibiting the strongest positive correlation with GVA in IE and the population displaying the weakest correlation.
 
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/kgntmr/CONSTRUCTION-SECTOR-ANALYSIS/assets/126175253/c79c1661-c79f-4c28-8af5-6caa0a1b89e4)
 
 
 
 4. MACHINE LEARNING
 
-Model	Train R2 Score	Test R2 Score	Best Hyperparameters
-Linear Regression	0.822	0.770	-
-Lasso	0.815	0.751	Alpha : 0.0001
-Ridge	0.820	0.773	Alpha : 1e-15
-ElasticNet	0.819	0.768	Alpha : 0.001, l1_ratio:0.1
-Decision Tree
-Regressor	0.946	0.604	Max_depth : 6
-Min_samples_leaf : 2
-Min_samples_split : 5
-PCA+Linear Regression	0.820	0.773	-
+Model	                 | Train R2 Score	| Test R2 Score	| Best Hyperparameters
+Linear Regression	     | 0.822         	| 0.770	        |  -
+Lasso	                 | 0.815	         | 0.751	        | Alpha: 0.0001
+Ridge            	     | 0.820	         | 0.773         |	Alpha: 1e-15
+ElasticNet	            | 0.819	         | 0.768	        | Alpha: 0.001, l1_ratio:0.1
+Decision Tree Regressor|	0.946	         | 0.604	        | Max_depth: 6 
+                       | -              | -             | Min_samples_leaf: 2
+                       | -              | -             | Min_samples_split : 5
+PCA+Linear Regression	 | 0.820	         | 0.773	        | -
 
-Multiple Linear Regression:
+
+- Multiple Linear Regression:
 
 Good overall fit, with relatively high R2 scores on both training and test datasets. Multiple linear regression is a popular model that estimates the effect of each predictor on a target variable, thereby assisting in the identification of influential predictors. 
 
-Lasso Regression:
+- Lasso Regression:
 
 Slightly underperformed compared to linear regression, with lower R2 scores on both training and test datasets. Effective for feature selection. Lasso regression employs L1 regularization to nullify extraneous predictors, thereby enhancing model interpretability and feature selection, especially for high-dimensional datasets.
 
-Ridge Regression:
+- Ridge Regression:
 
 Similar performance to linear regression, with slightly improved R2 scores. Helps handle multicollinearity. Regularization with L2 is used in ridge regression to reduce coefficient estimates and prevent overfitting. It reduces the influence of predictors that are correlated, resulting in stable model performance. The Ridge Regression model can be used for prediction.
 
-ElasticNet Regression:
+- ElasticNet Regression:
 
 Slightly lower R2 scores compared to linear regression and ridge regression. Useful for datasets with many features. ElasticNet incorporates the strengths of both Lasso and Ridge, utilizing L1 and L2 penalties for feature selection and coefficient shrinkage. It is effective with datasets containing numerous predictors, including those that are irrelevant or correlated.
 
-Decision Tree Regression:
+- Decision Tree Regression:
 
 High R2 score on training data but lower on test data, suggesting overfitting and poor generalization. The non-parametric model of decision tree regression captures complex predictor-target interactions. It is capable of handling both categorical and numeric predictors and effectively identifies complex decision boundaries.
 
-PCA + Linear Regression:
+- PCA + Linear Regression:
 
 Lower R^2 scores compared to other models. PCA reduces dimensionality but may result in some loss of information.
 
 4.1. Histogram of Test and Train Score Comparison 
 
+
+![image](https://github.com/kgntmr/CONSTRUCTION-SECTOR-ANALYSIS/assets/126175253/6f18c3bd-904d-43c9-b9c2-623a86263065)
 
 
 4.2. Natural Language Tool Kit and Text Blob
@@ -313,8 +305,8 @@ I will analyze the sentiment of Reddit API data, focusing specifically on discus
 I will utilize two libraries for this analysis: TextBlob and NLTK. TextBlob provides a straightforward interface for sentiment analysis, whereas NLTK offers greater flexibility and configuration options.
 NLTK is a comprehensive toolkit for natural language processing (NLP) duties, offering tokenization and stemming control. TextBlob prioritizes sentiment analysis with an approach that is simple and accessible.
 
-TextBlob Sentiment Analysis	NLTK Sentiment Analysis
--0,078	-0,111
+| TextBlob Sentiment Analysis	| NLTK Sentiment Analysis|
+| -0,078	                     | -0,111                 |
 
 NLTK analysis reveals an average sentiment score of approximately -0.1118, indicating a slightly more negative sentiment compared to TextBlob.
 
@@ -323,32 +315,6 @@ NLTK analysis reveals an average sentiment score of approximately -0.1118, indic
 Using regression models to conduct an analysis, it has been determined that Ridge regression yields a stable and optimal score. Consequently, it can be utilized for predicting the future gross value addition in the Irish construction industry. The analysis of the heatmap reveals that the variables with the greatest impact are labor force and construction permission. Compared to other European nations, Ireland's construction sector has a relatively lower gross value addition. Moreover, remarks on Reddit indicate that the housing crisis has a negative effect on public sentiment. 
 
 Considering its stability and optimal performance, stakeholders are advised to utilize Ridge regression for future predictions of gross value addition in Ireland's construction industry. The labor force and construction permission variables, which the heatmap analysis identified as having a significant impact, should be the focal point of strategies aimed at enhancing them and increasing value addition in the sector. According to Reddit comments, addressing the housing problem, which has a negative effect on public sentiment, requires proactive measures such as expanding affordable housing options and boosting access to housing resources. Moreover, benchmarking against other European nations with higher gross value addition in construction can provide valuable insights and suggestions for enhancing Ireland's performance in the industry. Lastly, it is essential to note that the data is synthetic.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -365,5 +331,3 @@ Statistical confidentiality - CSO - central statistics office (2022) CSO. Availa
 https://github.com/kgntmr/CONSTRUCTION-SECTOR-ANALYSIS
 
 
-
-![image](https://github.com/kgntmr/CONSTRUCTION-SECTOR-ANALYSIS/assets/126175253/b0656760-f228-4f18-9c19-e744af09e728)
