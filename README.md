@@ -257,15 +257,8 @@ The heatmap reveals significant correlations between variables, with the Labour 
 
 4. MACHINE LEARNING
 
-Model	                 | Train R2 Score	| Test R2 Score	| Best Hyperparameters
-Linear Regression	     | 0.822         	| 0.770	        |  -
-Lasso	                 | 0.815	         | 0.751	        | Alpha: 0.0001
-Ridge            	     | 0.820	         | 0.773         |	Alpha: 1e-15
-ElasticNet	            | 0.819	         | 0.768	        | Alpha: 0.001, l1_ratio:0.1
-Decision Tree Regressor|	0.946	         | 0.604	        | Max_depth: 6 
-                       | -              | -             | Min_samples_leaf: 2
-                       | -              | -             | Min_samples_split : 5
-PCA+Linear Regression	 | 0.820	         | 0.773	        | -
+![image](https://github.com/kgntmr/CONSTRUCTION-SECTOR-ANALYSIS/assets/126175253/9e113512-4afc-4849-b7e9-9789dd1aa29f)
+
 
 
 - Multiple Linear Regression:
@@ -305,8 +298,8 @@ I will analyze the sentiment of Reddit API data, focusing specifically on discus
 I will utilize two libraries for this analysis: TextBlob and NLTK. TextBlob provides a straightforward interface for sentiment analysis, whereas NLTK offers greater flexibility and configuration options.
 NLTK is a comprehensive toolkit for natural language processing (NLP) duties, offering tokenization and stemming control. TextBlob prioritizes sentiment analysis with an approach that is simple and accessible.
 
-| TextBlob Sentiment Analysis	| NLTK Sentiment Analysis|
-| -0,078	                     | -0,111                 |
+TextBlob Sentiment Analysis: -0,078	                  
+NLTK Sentiment Analysis: -0,111
 
 NLTK analysis reveals an average sentiment score of approximately -0.1118, indicating a slightly more negative sentiment compared to TextBlob.
 
