@@ -104,7 +104,7 @@ The new merged data frame is ready for further analysis and it is about the fact
 •	Labour Force: The size of the labour force in Ireland (numerical, ratio type).
 •	GVA in IE: Value Addition in Gross of Construction Sector in Ireland(numerical, ratio type). This column is the priority and null values are deleted according to this column and other columns are already interpolated.
 •	New House Prices in IE (€): The prices of new houses in Ireland (numerical, ratio type).
-•	Second Hand House Prices in IE(€): The prices of second-hand houses in Ireland (numerical, ratio type).
+•	Second-Hand House Prices in IE(€): The prices of second-hand houses in Ireland (numerical, ratio type).
 
 
 2. STATISTIC
