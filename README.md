@@ -8,5 +8,3 @@ This study used information from reliable sources, including the Central Statist
 Related datasets were merged to improve the study, giving a thorough insight of the building industry. Using Plotly Express, interactive data visualization was made possible, providing dynamic and visually appealing graphs. The Scipy library was used in statistical analysis, and Scikit-learn was used to create machine learning models.
 
 This study evaluated the sentiment conveyed in textual data acquired from the Reddit API using sentiment analysis approaches using NLTK and TextBlob and compared the outcomes of the two methods. Particular attention was paid to debates over homelessness in Ireland, which provided insight into how the general population views the need for new housing solutions.
-
-Thus, the goal of this assignment is to give stakeholders, decision-makers, and industry professionals a thorough, data-driven assessment of Ireland's construction industry that includes insightful recommendations. Making well-informed decisions to influence the future trajectory of the Irish construction sector requires an awareness of previous dynamics and patterns.
